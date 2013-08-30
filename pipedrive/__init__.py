@@ -1,5 +1,10 @@
 from httplib2 import Http
-from json import dumps, loads
+
+try:
+    from json import dumps, loads
+except ImportError:
+    from simplejson import dumps, loads
+
 from types import DictType
 
 PIPEDRIVE_API_URL = "https://api.pipedrive.com/v1/"
